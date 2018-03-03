@@ -1,3 +1,13 @@
+
+function steps(){
+	//for(var i=0;i<minorRoadsSet1.length-1;i++){
+		var a = nodes[ minorRoadsSet1[tp]  ];
+		var b = nodes[ minorRoadsSet1[tp+1]];
+		drawLine(a,b,"red",1);		
+	//}	
+	tp++;
+}
+
 function showGraph(){
 	printMajorRoads = false;
 	printMinorRoads = false;

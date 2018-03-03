@@ -6,35 +6,35 @@
   <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
-  <button type="button" class="btn btn-danger" id="step">Step</button>
+  <button type="button" class="btn btn-danger" id="step" onclick="steps()">Step</button>
 </head>
 <body>
 
 
-  <canvas id="canvas"></canvas>  
+<canvas id="canvas"></canvas>  
 
-  <div class="container">    
-    <div class="btn-group-vertical">
-      <div class="btn-group">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          Path <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a onclick="showMajorRoads();">Major Roads</a></li>
-            <li><a onclick="showMinorRoads();">Minor Roads</a></li>
-          </ul>
-        </div>
+<div class="container">    
+  <div class="btn-group-vertical">
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Path <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a onclick="showMajorRoads();">Major Roads</a></li>
+          <li><a onclick="showMinorRoads();">Minor Roads</a></li>
+        </ul>
+      </div>
 
-         <div class="btn-group">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          Map <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a onclick="showGraph()">Graph</a></li>
-            <li><a onclick="showPerlin()">Perlin Noise</a></li>
-            <li><a onclick="showWater()">Water</a></li>
-          </ul>
-        </div>
-    </div>
+       <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Map <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a onclick="showGraph()">Graph</a></li>
+          <li><a onclick="showPerlin()">Perlin Noise</a></li>
+          <li><a onclick="showWater()">Water</a></li>
+        </ul>
+      </div>
   </div>
+</div>
     
 
 </body>

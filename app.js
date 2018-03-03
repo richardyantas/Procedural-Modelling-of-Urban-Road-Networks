@@ -5,22 +5,27 @@ var h = window.innerHeight;
 var cx = w/2;
 var cy = h/2;
 
+// tmp;
+
+var tp = 0;
+
 var canvas  = document.getElementById('canvas');
 var section = document.getElementsByClassName('btn-group-vertical')
 var step    = document.getElementById('step');
 
-step.style.position = 'absolute'
-step.style.width = '100px';
-step.style.left = cx-50+"px";
-step.style.top = '40px';
+step.style.position = 'absolute';
+step.style.width    = '100px';
+step.style.left     = cx-50+"px";
+step.style.top      = '40px';
+
 
 for (var i = 0; i < section.length; i++) {
   section[i].style.width = '100px';
   section[i].style.left  = cx-cw/2-200+"px";
-  section[i].style.top  = "200px";
+  section[i].style.top   = '200px';
 }
-canvasInit(canvas, cw, ch, cx, cy);
 
+canvasInit(canvas, cw, ch, cx, cy);
 
 var ctx = canvas.getContext('2d');
 
@@ -52,9 +57,15 @@ var txtFile = "text.txt";
 // Print layers:
 var printGraph      = false;
 var printPerlin     = false;
-var printWater 		= false;
-var printMajorRoads = false;
-var printMinorRoads = false;
+var printWater 		= true;
+var printMajorRoads = true;
+var printMinorRoads = true;
+
+// Minor roads stored in vector
+var minorRoadsSet1 = [];
+var minorRoadsSet2 = [];
+var minorRoadsSet3 = [];
+
 
 function main(){	
 
@@ -117,10 +128,7 @@ function main(){
 
 	//dfs(nodes[getIndex(25,25)],counterBfs);
 
-	var minorRoadsSet1 = [];
-	var minorRoadsSet2 = [];
-	var minorRoadsSet3 = [];
-
+	
 	minorRoadsSet1 =  bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],10)],50);
 	minorRoadsSet2 =  bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],20)],50);
 	minorRoadsSet3 =  bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],35)],50);
@@ -134,8 +142,17 @@ function main(){
 	
 }
 
-//main();
+main();
 
+
+/*
+var loop = function(){  // Proceso repetitivo 
+	update();  // Actualiza 
+	render();  // Diobuja 
+	window.requestAnimationFrame(loop,canvas);
+}
+window.requestAnimationFrame(loop,canvas);
+*/
 
 
 /*

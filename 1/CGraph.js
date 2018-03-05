@@ -63,6 +63,12 @@ function getIndex(i,j){
 		return -10;
 }
 
+function getPoint(id){
+	var x = Math.floor(id/51);
+	var y = id%51;
+	return new CPoint(x, y, 0);
+}
+
 function initGraph(g){	
 	var c;
 	for(var i = 0; i <= 50; i++){  // 51*51 = 2601 nodes
@@ -140,34 +146,36 @@ function dfs(source,c){
 	}	
 }
 
-function bfs(source,c){
-	var minorRoad = [];
+function bfs(source,c,treeBfs){
+	
+	//var minorRoad = [];
 	var dist = [];
 	dist[source.id] = 0;
 	var q = new Queue();
 	var ini = 0;
 
-	minorRoad.push(source.id);
+	//minorRoad.push(source.id);
 	q.enqueue(source);
 
-	while(ini<c){
+	while(ini<200){
 		ini++;
 		var no = q.dequeue();		
 		for(var i=0;i<5;i++){
-			var t = g.adj[no.id].length;
-			var v = Math.floor((Math.random() * (t-1) ) + 0)
+			var t  = g.adj[no.id].length;
+			var v  = Math.floor((Math.random() * (t-1) ) + 0);
 			var ne = g.adj[no.id][v].n;
-			if(!g.visitNode[ne.id] && ne.road != 2){
+			if( !g.visitNode[ne.id] && ne.road != 2 ){
+				treeBfs[no.id].push(ne.id);
 				dist[ne.id] = dist[no.id]+1;
 				g.visitNode[ne.id] = true;	
-				minorRoad.push(ne.id);
+				//minorRoad.push(ne.id);
 				q.enqueue(ne);
 				if( printMinorRoads )			
 					drawLine(no, ne, "black",1);	
 			}
 		}
 	}
-	return minorRoad;
+	return treeBfs;
 }
 
 

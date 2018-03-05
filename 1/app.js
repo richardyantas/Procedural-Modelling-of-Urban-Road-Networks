@@ -66,6 +66,19 @@ var minorRoadsSet1 = [];
 var minorRoadsSet2 = [];
 var minorRoadsSet3 = [];
 
+// for a while
+
+var stages = new Queue();
+
+
+// Major roads
+
+var p1 = [];
+var p2 = [];
+var p3 = [];
+var p4 = [];
+
+
 
 function main(){	
 
@@ -111,10 +124,7 @@ function main(){
 
 
 
-	var p1 = [];
-	var p2 = [];
-	var p3 = [];
-	var p4 = [];
+	
 
 	p1 = aStar(nodes[getIndex(a.x/10, a.y/10)],nodes[getIndex(c.x/10, c.y/10)],g);
 
@@ -128,10 +138,19 @@ function main(){
 
 	//dfs(nodes[getIndex(25,25)],counterBfs);
 
+	for(var i=0;i<100000;i++){ // calculate exact value for limit
+		minorRoadsSet1[i] = [];
+		minorRoadsSet2[i] = [];
+		minorRoadsSet3[i] = [];
+	}
 	
-	minorRoadsSet1 =  bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],10)],50);
-	minorRoadsSet2 =  bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],20)],50);
-	minorRoadsSet3 =  bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],35)],50);
+	stages.enqueue( getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],10) );
+
+	minorRoadsSet1 = bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],10)],200,minorRoadsSet1 );
+	minorRoadsSet2 = bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],20)],200,minorRoadsSet2 );
+	minorRoadsSet3 = bfs(nodes[getNodeByParents(p1,nodes[getIndex(c.x/10, c.y/10)],35)],200,minorRoadsSet3 );
+
+
 
 
 	//var g = new CGraph(nodes);

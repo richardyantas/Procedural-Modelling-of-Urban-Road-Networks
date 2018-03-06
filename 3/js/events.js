@@ -57,6 +57,7 @@ function showWater(){
 }
 
 function showMajorRoads(){
+	printMinorRoads = false;
 	printMajorRoads = true;
 	main();
 	printMajorRoads = false;
@@ -74,9 +75,17 @@ function trafficSimulation(){
 	// i1 - i2 = 6 , maximum capcity
 	// i2 - B  = 4 , maximum capcity
 	// Is choosen 2 segmentss A -i1   and B - i1; 
+	trafficLevel++;
+	if( trafficLevel >= 2){
+		console.log(nodes[mxn2]);
+		printMajorRoads = true;
+		var p1 = aStar( nodes[ getIndex(city_d.x/CANVASSTEPNODE, city_d.y/CANVASSTEPNODE)] , nodes[mxn2] ,g);
+		for(var i=0;i<parents2.length-1;i++){
+			drawLine(nodes[mxn2], nodes[ parents2[mxn2] ], COLORMAJORROADS ,2);
+			mxn2 = parents2[mxn2];
+		}
 
-	if( trafficLevel >= 4){
-		
+		printMajorRoads = false;
 	} 
 
 }

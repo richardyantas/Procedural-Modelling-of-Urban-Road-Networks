@@ -93,3 +93,7 @@ var p4 = [];
 
 var trafficLevel = 0;
 
+var parents2;
+var mxn2;
+
+

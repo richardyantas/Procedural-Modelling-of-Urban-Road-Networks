@@ -10,8 +10,10 @@ function steps(){
 		}				
 	} 
 	
-	for(var i=0;i<stages.dataStore.length;i++){				
-		var p = getPoint( stages.dataStore[i] );		
+	for(var i=0;i<stages.dataStore.length;i++){		
+		
+		var p = getPoint( stages.dataStore[i] );
+		
 		console.log( p.x + " " + p.y );
 
 		if( nodes[ getIndex(p.x-1, p.y) ].road == 2  ){// CNode.road = 1 o 2
@@ -26,6 +28,7 @@ function steps(){
 		if( nodes[ getIndex(p.x, p.y+1) ].road == 2  ){
 			drawLine(nodes[getIndex(p.x, p.y)],nodes[ getIndex(p.x, p.y+1) ],"red",1);
 		}
+
 	}
 
 	for(var i=0;i<n;i++){

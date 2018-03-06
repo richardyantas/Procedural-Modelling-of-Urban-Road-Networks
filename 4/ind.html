@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Graphics</title>
+	<meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
+	<script type="text/javascript" src="src/jquery.min.js"></script>
+	<script type="text/javascript" src="src/bootstrap.min.js"></script>
+  <button type="button" class="btn btn-danger" id="step" onclick="steps()">Step</button>
+</head>
+<body>
+
+
+<canvas id="canvas"></canvas>  
+
+<div class="container">    
+  <div class="btn-group-vertical">
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Path <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a onclick="showMajorRoads();">Major Roads</a></li>
+          <li><a onclick="showMinorRoads();">Minor Roads</a></li>
+          <li><a onclick="trafficSimulation();">Traffic Level</a></li>
+        </ul>
+      </div>
+
+       <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Map <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a onclick="showGraph()">Graph</a></li>
+          <li><a onclick="showPerlin()">Perlin Noise</a></li>
+          <li><a onclick="showWater()">Water</a></li>          
+        </ul>
+      </div>
+  </div>
+</div>
+    
+
+</body>
+
+<link rel="stylesheet" type="text/css" href="css/app.css">
+<script type="text/javascript" src="js/events.js"></script>
+<script type="text/javascript" src="js/pq.js"></script>
+<script type="text/javascript" src="js/map.js"></script>  
+<script type="text/javascript" src="js/CGraph.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
+
+</html>
+

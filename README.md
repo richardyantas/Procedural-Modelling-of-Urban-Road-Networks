@@ -12,9 +12,15 @@
 
 One by one, the algorithm builds major roads that connect pairs of neighbouring cities n nc, resulting in an initial road network, we find all intersections and use then as the initial nuclei of city growth. 
 
-![Img_current_state](./src/img/Figure11d.png)
-![Img_current_state](./src/img/Figure11e.png)
-![Img_current_state](./src/img/Figure12.png)
+
+![Img_current_state](./src/img/1.png)
+
+<!--
+    ![Img_current_state](./src/img/Figure11d.png)
+    ![Img_current_state](./src/img/Figure11e.png)
+    ![Img_current_state](./src/img/Figure12.png)
+-->
+
 
     ``` c++
         double p,r;   
